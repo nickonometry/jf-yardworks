@@ -43,35 +43,37 @@ import Card from '../components/Card.astro';
         ><tspan x="353.74" y="0" style="letter-spacing:.08001335585169028em">cial Landscaping</tspan></text
       ></svg
     >
-    <h1>Website <span class="text-gradient">coming soon</span></h1>
+    <div class="">
+      <h1>Website <span class="text-gradient">coming soon</span></h1>
 
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://clienthub.getjobber.com/client_hubs/78fd0527-825e-45be-9bc3-9de2006b5a60/public/work_request/new?source=website"
-        title="In the meantime"
-        body="Contact us to get started on a new project!"
-      />
-    </ul>
+      <ul role="list" class="link-card-grid">
+        <Card
+          href="https://clienthub.getjobber.com/client_hubs/78fd0527-825e-45be-9bc3-9de2006b5a60/public/work_request/new?source=website"
+          title="In the meantime"
+          body="Contact us to get started on a new project!"
+        />
+      </ul>
+    </div>
   </main>
 </Layout>
 
 <style>
   main {
-    display: grid;
-    place-content: center;
-    justify-items: center;
-    gap: var(--gap-large);
-    height: 100svh;
+    margin: 0 auto;
+    height: 100dvh;
+    max-width: 768px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
     color: white;
     font-size: 20px;
     line-height: 1.6;
-    padding: 24px;
   }
   .logo {
-    display: block;
-    height: auto;
-    width: 80vw;
     max-width: 100%;
+    padding: 20px;
   }
   h1 {
     font-size: 3rem;
