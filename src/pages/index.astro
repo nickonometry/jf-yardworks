@@ -16,14 +16,16 @@ import Nav from '../components/Nav.astro';
 <style>
   .page-container {
     background:
-      linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95)) fixed,
-      url(truck.jpg) fixed;
+      linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15)) fixed,
+      url(/lawnmower.avif) fixed;
     background-size: cover;
     background-position: center;
+    height: 100%;
+    display: grid;
+    place-content: center;
   }
   .container {
     margin: 0 auto;
-    height: 100dvh;
     max-width: 768px;
     display: flex;
     align-items: center;
@@ -34,6 +36,9 @@ import Nav from '../components/Nav.astro';
     line-height: 1.6;
     gap: var(--gap);
     padding-inline: 24px;
+    background: var(--surface-dark);
+    border-radius: 8px;
+    margin: 0 32px 300px 32px;
   }
 
   .link-card-grid {
