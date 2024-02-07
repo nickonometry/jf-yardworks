@@ -4,13 +4,11 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="JF Yardworks - A Maine Landscaping Company - About Us">
-  <div class="about-container">
-    <div class="logo">
-      <Logo />
-    </div>
+  <div class="about">
+    <img src="truck.jpg" alt="JF Landscaping plow truck" />
     <div class="about-text">
       <p>
-        JF Yardworks is a family-owned, fully insured landscaping buisness centered in gorham, maine, specializing in residential and
+        JF Yardworks is a family-owned, fully insured landscaping buisness centered in Gorham, Maine, specializing in residential and
         commercial property maintenance for our local communities. We provide year-round services to handle all four seasons that maine
         offers us.
       </p>
@@ -18,21 +16,22 @@ import Layout from '../layouts/Layout.astro';
       <p>
         We believe in providing great customer service while getting the job done corectly and in a timely manner. We are fully licensed and
         insured with the state of maine. Herb, the owner, comes with years of experience with snow removal and landscaping. You can rely on
-        jfyardworks to manicure your property into pristine condition and keep it that way year-round. Whether you just need weekly mowing
+        JF Yardworks to manicure your property into pristine condition and keep it that way year-round. Whether you just need weekly mowing
         or full-scale property maintenance - we're here for you! Give us a call today for a free estimate.
       </p>
 
       <p>
-        Residential customers: along with mowing and plowing we offer many services for all of your personal property maintenance needs.
-        Maybe this is the year you give your garden beds a facelift; we offer and install a variety of high-quality mulch bedding. Have a
-        junk pile sitting around you've been meaning to ditch/recycle? Call us for a dump haul. Whatever your property cleanup needs may be,
-        we are here and eager to get the job done!
+        <span class="text-gradient underline">Residential customers:</span> along with mowing and plowing we offer many services for all of your
+        personal property maintenance needs. Maybe this is the year you give your garden beds a facelift; we offer and install a variety of high-quality
+        mulch bedding. Have a junk pile sitting around you've been meaning to ditch/recycle? Call us for a dump haul. Whatever your property
+        cleanup needs may be, we are here and eager to get the job done!
       </p>
 
       <p>
-        Commercial customers: when running a business your focus and energy is best spent running your day-to-day operation. You don't have
-        time to worry about the lawn and landscaping needs, snow removal, or keeping employees safe with clear pathways to and from your
-        facility - leave that to JF Yardworks! We will keep your buisness property looking great with safe passage all year.
+        <span class="text-gradient underline">Commercial customers:</span> when running a business your focus and energy is best spent running
+        your day-to-day operation. You don't have time to worry about the lawn and landscaping needs, snow removal, or keeping employees safe
+        with clear pathways to and from your facility - leave that to JF Yardworks! We will keep your buisness property looking great with safe
+        passage all year.
       </p>
 
       <p>
@@ -40,57 +39,89 @@ import Layout from '../layouts/Layout.astro';
         relationships within our community that last a lifetime. We strive to leave a positive, lasting impression with each of our clients
         and won't hesitate to go above and beyond to make your property care wishes come true.
       </p>
+      <div class="service-areas">
+        <p>
+          Service areas include:
+          <ul>
+            <li>Gorham</li>
+            <li>South Windham</li>
+            <li>Westbrook</li>
+            <li>Portland</li>
+            <li>Scarborough</li>
+            <li>Saco</li>
+            <li>South Buxton</li>
+          </ul>
+        </p>
+      </div>
 
-      <p>
-        Service areas include:
-        <ul>
-          <li>Gorham</li>
-          <li>South Windham</li>
-          <li>Westbrook</li>
-          <li>Portland</li>
-          <li>Scarborough</li>
-          <li>Saco</li>
-          <li>South Buxton</li>
-        </ul>
-      </p>
       <div class="back-home-container">
         <a href="/" style="justify-self: center"><span>&larr;</span> Back to the homepage</a>
       </div>
     </div>
   </div>
-
-  <style>
-    .about-container {
-      display: grid;
-      place-content: center;
-      gap: var(--gap);
-      padding: 16px;
-      background:
-        linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95)) fixed,
-        url(truck.jpg) fixed;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .logo {
-      max-width: 768px;
-      height: 100px;
-      width: 100%;
-    }
-
-    .about-text {
-      max-width: 768px;
-      padding: 24px;
-      border-radius: 8px;
-      background-color: rgba(0, 0, 0, 0.25);
-      line-height: 1.8em;
-      color: rgb(153, 153, 153);
-    }
-
-    .back-home-container {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-  </style>
 </Layout>
+
+<style lang="scss">
+  $breakpoint: 1024px;
+  .about {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    background: #fff;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px 0 0 0;
+      object-fit: cover;
+    }
+    @media screen and (max-width: $breakpoint) {
+      grid-template-columns: 1fr;
+
+      img {
+        max-height: 250px;
+      }
+    }
+  }
+
+  .underline {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .about-text {
+    max-width: 768px;
+    margin: var(--gap) auto;
+    padding: 24px;
+    line-height: 1.8em;
+    color: rgb(0, 0, 0);
+    border-radius: 2px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow:
+      0 3px 6px rgba(0, 0, 0, 0.07),
+      0 3px 6px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+
+    p:first-child {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .back-home-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .service-areas {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  a {
+    color: rgb(var(--accent));
+    font-weight: bold;
+  }
+</style>
