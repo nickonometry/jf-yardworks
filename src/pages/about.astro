@@ -54,7 +54,7 @@ import Layout from '../layouts/Layout.astro';
         </ul>
       </p>
       <div class="back-home-container">
-        <a href="/" style="justify-self: center">Back to the homepage</a>
+        <a href="/" style="justify-self: center"><span>&larr;</span> Back to the homepage</a>
       </div>
     </div>
   </div>
@@ -88,8 +88,9 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .back-home-container {
-      display: grid;
-      place-content: center;
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
   </style>
 </Layout>
