@@ -2,24 +2,38 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Logo from '../components/Logo.astro';
+import Nav from '../components/Nav.astro';
 ---
 
 <Layout title="JF Yardworks - A Maine Landscaping Company">
-  <main>
-    <Logo class="logo" />
-    <h1>Website <span class="text-gradient">coming soon</span></h1>
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://clienthub.getjobber.com/client_hubs/78fd0527-825e-45be-9bc3-9de2006b5a60/public/work_request/new?source=website"
-        title="In the meantime"
-        body="Contact us to get started on a new project!"
-      />
-    </ul>
-  </main>
+  <div class="page-container">
+    <div class="container">
+      <div class="logo">
+        <Logo />
+      </div>
+      <ul role="list" class="link-card-grid">
+        <Card
+          href="https://clienthub.getjobber.com/client_hubs/78fd0527-825e-45be-9bc3-9de2006b5a60/public/work_request/new?source=website"
+          title="Get in touch"
+          body="Contact us to get started on a new project!"
+          target="_blank"
+        />
+        <Card href="/about" title="About Us" body="Learn about us and our family owned business" target="_self" />
+      </ul>
+      <h1>Website is in progress. <br /><span class="text-gradient">Check back soon</span></h1>
+    </div>
+  </div>
 </Layout>
 
 <style>
-  main {
+  .page-container {
+    background:
+      linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95)) fixed,
+      url(truck.jpg) fixed;
+    background-size: cover;
+    background-position: center;
+  }
+  .container {
     margin: 0 auto;
     height: 100dvh;
     max-width: 768px;
@@ -28,32 +42,28 @@ import Logo from '../components/Logo.astro';
     align-content: center;
     justify-content: center;
     flex-direction: column;
-    color: white;
     font-size: 20px;
     line-height: 1.6;
     gap: var(--gap);
     padding-inline: 24px;
   }
   .logo {
-    max-width: 100%;
-    padding: 20px;
-  }
-  h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
+    max-width: 768px;
+    height: 220px;
+    width: 100%;
   }
   .text-gradient {
-    background-image: var(--accent-gradient);
+    background: var(--accent-gradient);
+    /* background: rgb(35,219,164); */
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
   }
 
   .link-card-grid {
     margin: 0;
     padding: 0;
+    display: grid;
+    gap: var(--gap);
   }
 </style>

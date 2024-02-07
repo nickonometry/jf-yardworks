@@ -1,0 +1,16 @@
+---
+const myFavouriteCities = [
+  {
+    name: 'london',
+    country: 'england'
+  },
+  {
+    name: 'barcelona',
+    country: 'spain'
+  }
+];
+---
+
+<ul>
+  {myFavouriteCities.map((data) => <li>{data.name}</li>)}
+</ul>
