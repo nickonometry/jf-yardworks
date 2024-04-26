@@ -4,94 +4,98 @@ import Logo from './Logo.astro';
 ---
 
 <header>
-  <div class="logo">
-    <Logo />
-  </div>
-  <nav>
-    <ul>
-      <li>
-        <Link href="/">Home</Link>
-      </li>
-      <li>
-        <Link href="/about">About</Link>
-      </li>
-      <li>
-        <a
-          href="https://clienthub.getjobber.com/client_hubs/78fd0527-825e-45be-9bc3-9de2006b5a60/public/work_request/new?source=website"
-          target="_blank">Contact Us</a
-        >
-      </li>
-    </ul>
-  </nav>
+ <div class="logo">
+  <Logo />
+ </div>
+ <nav>
+  <ul>
+   <li>
+    <Link href="/">Home</Link>
+   </li>
+   <li>
+    <Link href="/about">About</Link>
+   </li>
+   <li>
+    <Link href="/services">Services</Link>
+   </li>
+   <li>
+    <a
+     href="https://clienthub.getjobber.com/client_hubs/78fd0527-825e-45be-9bc3-9de2006b5a60/public/work_request/new?source=website"
+     target="_blank">
+     Contact Us
+    </a>
+   </li>
+  </ul>
+ </nav>
 </header>
 
 <style lang="scss">
-  header {
-    width: 100%;
-    background: var(--surface-dark);
-    text-align: center;
-    box-shadow: var(--shadow);
-    padding: var(--gap);
-    z-index: 999;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline: var(--gap);
+ header {
+  width: 100%;
+  background: var(--surface-dark);
+  text-align: center;
+  box-shadow: var(--shadow);
+  padding: var(--gap);
+  z-index: 999;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: var(--gap);
 
-    @media screen and (max-width: 900px) {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      justify-items: center;
-    }
+  @media screen and (max-width: 900px) {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 24px;
+   justify-items: center;
   }
+ }
 
-  ul,
-  li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
+ ul,
+ li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+ }
 
-  ul {
-    display: flex;
-    align-items: center;
-    gap: var(--gap);
-  }
+ ul {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+ }
 
-  .logo {
-    max-width: 400px;
-    height: 100px;
-    width: 100%;
-  }
+ .logo {
+  max-width: 400px;
+  height: 100px;
+  width: 100%;
+ }
 
-  nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
+ nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+ }
 
-  nav li {
-    margin-bottom: 1em;
-    margin-left: 1em;
-  }
+ nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+ }
 
-  nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 2rem;
-    transition: opacity 150ms ease-in-out;
-    @media screen and (max-width: 900px) {
-      font-size: 1.175rem;
-    }
+ nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: opacity 150ms ease-in-out;
+  @media screen and (max-width: 900px) {
+   font-size: 1.175rem;
   }
+ }
 
-  nav a:hover {
-    color: rgb(var(--accent-light));
-  }
+ nav a:hover {
+  color: rgb(var(--accent-light));
+ }
 
-  nav a[aria-current='page'] {
-    color: rgb(var(--accent-light));
-  }
+ nav a[aria-current='page'] {
+  color: rgb(var(--accent-light));
+ }
 </style>

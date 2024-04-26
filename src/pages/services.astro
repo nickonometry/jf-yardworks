@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+import nine from '../../src/assets/services/9.jpg';
+import { Image } from 'astro:assets';
+---
+
+<Layout title="JF Yardworks - A Maine Landscaping Company - Services">
+ <div class="about">
+  <div class="about-text">
+   <div class="image-grid">
+    <Image
+     src={nine}
+     alt="Owner Herb Johnson running a mower"
+     densities={[1.5, 2]}
+     quality="medium"
+    />
+   </div>
+   <div style="padding: 24px;">
+    <p>
+     JF Yardworks provides comprehensive landscaping services for a large portion of Southern Maine. Whether you're looking to enhance your
+     residential or commercial property, our expert team is here to assist you. Our services include:
+    </p>
+
+    <h2>Residential services</h2>
+    <ul>
+     <li>Weekly mowing</li>
+     <li>Weed whacking</li>
+     <li>Dethatching</li>
+     <li>Lawn aeration and overseeding</li>
+     <li>Garden bed maintenance</li>
+     <li>Bark mulch install</li>
+     <li>Spring clean ups</li>
+     <li>Fall clean ups</li>
+     <li>Brush/shrub removal</li>
+     <li>Leaf removal</li>
+     <li>Plants, shrubs, and flowers planting</li>
+    </ul>
+
+    <h2>Commercial services</h2>
+    <ul>
+     <li>Weekly lawn maintenance</li>
+     <li>Mulching</li>
+     <li>Seasonal clean ups (spring/fall)</li>
+     <li>Snow plowing</li>
+     <li>Salting</li>
+     <li>Snow blowing / shoveling</li>
+     <li>Winter tree and shrub prep and wrapping</li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</Layout>
+
+<style lang="scss">
+ $breakpoint: 1024px;
+ .about {
+  height: 100%;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+
+  padding: var(--gap);
+
+  img {
+   width: 100%;
+   height: 100%;
+   border-radius: 8px 0 0 8px;
+   object-fit: cover;
+  }
+ }
+
+ .underline {
+  font-weight: bold;
+  text-decoration: underline;
+ }
+
+ .about-text {
+  max-width: 1440px;
+  margin: 0 auto;
+  background: white;
+
+  line-height: 1.8em;
+  color: rgb(0, 0, 0);
+  border-radius: 2px;
+  position: relative;
+  border-radius: 8px;
+  box-shadow:
+   0 3px 6px rgba(0, 0, 0, 0.07),
+   0 3px 6px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+
+  @media screen and (max-width: $breakpoint) {
+   grid-template-columns: 1fr;
+
+   img {
+    max-height: 250px;
+   }
+  }
+
+  p:first-child {
+   padding: 0;
+   margin: 0;
+  }
+ }
+
+ .image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+ }
+
+ .back-home-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+ }
+
+ .service-areas {
+  width: 100%;
+  margin: 0 auto;
+ }
+
+ a {
+  color: rgb(var(--accent));
+  font-weight: bold;
+ }
+</style>
